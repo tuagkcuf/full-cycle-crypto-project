@@ -4,11 +4,14 @@ import * as dotenv from "dotenv"
 import { verify } from "../utils/verify"
 dotenv.config()
 
+// TODO: tests unit and staging
+// TODO: frontend part
+
 export default async ({ getNamedAccounts, deployments }) => {
     const { deploy, log, get } = deployments
     const { deployer } = getNamedAccounts()
 
-    const currentTimestampInSeconds = Math.round(Date.now() / 1000)
+    const currentTimestampInSeconds = 10000000
     const unlockTime = currentTimestampInSeconds + 60
 
     const lockedAmount = ethers.utils.parseEther("0.001")
@@ -39,3 +42,5 @@ export default async ({ getNamedAccounts, deployments }) => {
         await verify(Lock.address, args, lockedAmount)
     }
 }
+
+module.exports.tags = ["all", "main"]

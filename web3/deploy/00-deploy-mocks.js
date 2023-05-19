@@ -15,3 +15,5 @@ export default async ({ getNamedAccounts, deployments }) => {
         })
     }
 }
+
+module.exports.tags = ["all", "mocks"]
