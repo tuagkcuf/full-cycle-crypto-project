@@ -38,6 +38,9 @@ export const solidity = {
             default: 0,
             1: 0,
         },
+        player: {
+            default: 1,
+        },
     },
     mocha: {
         timeout: 200000,
