@@ -13,4 +13,7 @@ const developmentChains = ["hardhat", "localhost"]
 const DECIMALS = 8
 const INITIAL_ANSWER = 20000000
 
+const frontEndContractsFile = "path to place contracts' addresses"
+const frontEndAbiFile = "path to place contracts' abis"
+
 export { networkConfig, developmentChains, DECIMALS, INITIAL_ANSWER }
