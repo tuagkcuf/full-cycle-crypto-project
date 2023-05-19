@@ -4,9 +4,6 @@
 // You can also run a script with `npx hardhat run <script>`. If you do that, Hardhat
 // will compile your contracts, add the Hardhat Runtime Environment's members to the
 // global scope, and execute the script.
-// TODO: make a chainlink contract like vrf
-// TODO: rewrite contract myself with chainlink vrf
-// TODO: add mocks for chainlink
 // TODO: update script properly using fcc study and write it myself
 // TODO: update tests properly and write them myself
 // TODO: add etherscan verification script
