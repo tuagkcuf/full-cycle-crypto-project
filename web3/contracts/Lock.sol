@@ -68,4 +68,13 @@ contract Lock {
         owner.transfer(address(this).balance);
         // owner.call{value: address(this).balance}("") - less gas consumption
     }
+
+    // Getter functions
+    function getUnlockTime() external view returns (uin256) {
+        return unlockTime;
+    }
+
+    function getOwner() external view returns (address) {
+        return owner;
+    }
 }
