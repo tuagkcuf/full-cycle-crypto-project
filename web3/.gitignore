@@ -128,3 +128,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# hardhat
+artifacts
+cache
+deployments
+node_modules
+coverage
+coverage.json
