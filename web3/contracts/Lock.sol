@@ -77,4 +77,8 @@ contract Lock {
     function getOwner() external view returns (address) {
         return owner;
     }
+
+    function getPriceFeed() external view returns (AggregatorV3Interface) {
+        return s_priceFeed;
+    }
 }
