@@ -14,6 +14,7 @@ import { mine } from "@nomicfoundation/hardhat-network-helpers"
               player = (await getNamedAccounts()).player
               await deployments.fixture(["all"])
               Lock = await ethers.getContract("Lock", deployer)
+              player = await ethers.getContract("Lock", player)
               mockV3Aggregator = await ethers.getContract("MockV3Aggregator", deployer)
           })
 
@@ -40,7 +41,11 @@ import { mine } from "@nomicfoundation/hardhat-network-helpers"
               })
               it("fails if not owner calls withdraw", async function () {
                   await mine(20000)
-                  await expect(Lock.withdraw()).to.be.revertedWith("Lock__NotOwner")
+                  await expect(player.withdraw()).to.be.revertedWith("Lock__NotOwner")
+              })
+              it("change account balance to 0", async function () {
+                  await Lock.withdraw()
+                  assert.equal("0", Lock.balance.toString())
               })
           })
       })
